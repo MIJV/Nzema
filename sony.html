@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NDOKOTA INFO WEB</title>
+    <meta name="description" content="NDOKOTA INFORMATIVE WEB PAGE">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9f1f6; /* Light blue background */
+            color: #333; /* Dark text color */
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #005c99; /* Deep blue for headings */
+            text-align: center;
+        }
+
+        h2 {
+            color: #004466; /* Darker blue for section headers */
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        section {
+            background-color: #ffffff; /* White background for sections */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007acc; /* Blue button */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005c8e; /* Darker blue on hover */
+        }
+
+        audio,
+        video {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="nzema.png" alt="Family Tree Image">
+
+    <h1><i>Emmanuel's Family Tree</i></h1>
+
+    <section>
+        <h2>Biography</h2>
+        <p>My family comes from a line of fine young men and women who have bright futures. They explore the wide world of laughter and joy, staying strong enough to survive hurdles and troubled times while living life to the fullest.</p>
+        <p>The best part is that there is joy, love, and God is always in our souls.</p>
+    </section>
+
+    <form>
+        <button><a href="names.html" style="text-decoration: none; color: #fff;">The Family Member Names</a></button>
+    </form>
+
+    <h3><i>Nothing Without You by Josiah Bel</i></h3>
+    <audio src="nothing without you.mp3" controls type="audio/mp3"></audio>
+    <button onclick="downloadAudio()">Download Audio</button>
+
+    <h3><i>U & I by Zzz ft. Stunna Gambino</i></h3>
+    <video src="gambino.mp4" controls type="video/mp4" width="480"></video>
+    <button onclick="downloadVideo()">Download Video</button>
+
+    <script>
+        function downloadAudio() {
+            var audioElement = document.querySelector('audio');
+            var audioUrl = audioElement.src;
+            var link = document.createElement('a');
+            link.href = audioUrl;
+            link.download = 'nothing_without_you.mp3';
+            link.click();
+        }
+
+        function downloadVideo() {
+            var videoElement = document.querySelector('video');
+            var videoUrl = videoElement.src;
+            var link = document.createElement('a');
+            link.href = videoUrl;
+            link.download = 'gambino.mp4';
+            link.click();
+        }
+    </script>
+
+</body>
+</html>

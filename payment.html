@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NDOKOTA Payment Page</title>
+    <meta name="description" content="NDOKOTA Payment Page">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9f1f6; /* Light blue background */
+            color: #333; /* Dark text color */
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #005c99; /* Deep blue for headings */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #ffffff; /* White background for form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007acc; /* Blue button */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005c8e; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Payment Information</h1>
+
+    <form id="paymentForm">
+        <label for="name">Name on Card</label>
+        <input type="text" id="name" name="name" placeholder="visa,mastercard..." required>
+
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9101 1121" required>
+
+        <label for="expiryDate">Expiry Date</label>
+        <input type="date" id="expiryDate" name="expiryDate" required>
+
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+
+        <button type="submit" onclick="submitPayment(event)">Submit Payment</button>
+    </form>
+
+    <script>
+        function submitPayment(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Retrieve form data
+            const name = document.getElementById('name').value;
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+            const cvv = document.getElementById('cvv').value;
+
+            // Simulate payment process (replace with actual payment integration)
+            if (name && cardNumber && expiryDate && cvv) {
+                alert('Payment submitted successfully!\n\nName: ' + name + '\nCard Number: ' + cardNumber);
+                // Reset form after successful submission
+                document.getElementById('paymentForm').reset();
+            } else {
+                alert('Please fill out all payment details.');
+            }
+        }
+    </script>
+
+</body>
+</html>
